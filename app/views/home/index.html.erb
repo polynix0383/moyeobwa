@@ -1,0 +1,32 @@
+<% content_for :title, "모여봐 - 함께하면 더 즐거운 모임" %>
+
+<div class="w-full text-center py-20">
+  <h1 class="text-4xl font-bold text-gray-900">모여봐 - 함께하면 더 즐거운 모임</h1>
+  <p class="mt-2 text-[1.4875rem] text-blue-600">현재 3개의 모임이 진행 중입니다</p>
+  <p class="mt-4 text-lg text-gray-600">다양한 모임을 만들고 참여해 보세요</p>
+  <%= link_to "모임 둘러보기", meetings_path, class: "inline-block mt-8 px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700" %>
+</div>
+
+<div class="w-full max-w-5xl mx-auto pb-20 px-5">
+  <h2 class="text-2xl font-bold text-gray-900 text-center mb-10">이런 모임이 있어요</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+      <div class="text-4xl mb-4">🎨</div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">취미 모임</h3>
+      <p class="text-gray-500 text-sm">그림, 사진, 음악 등 같은 취미를 가진 사람들과 함께해요</p>
+    </div>
+
+    <div class="border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+      <div class="text-4xl mb-4">📚</div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">스터디 모임</h3>
+      <p class="text-gray-500 text-sm">함께 공부하고 성장하는 스터디 모임에 참여해 보세요</p>
+    </div>
+
+    <div class="border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+      <div class="text-4xl mb-4">🏃</div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">운동 모임</h3>
+      <p class="text-gray-500 text-sm">러닝, 등산, 헬스 등 활기찬 운동 모임을 찾아보세요</p>
+    </div>
+  </div>
+</div>

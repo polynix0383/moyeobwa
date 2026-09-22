@@ -1,0 +1,47 @@
+<% content_for :title, "모임 만들기 - 모여봐" %>
+
+<div class="w-full max-w-lg mx-auto py-16">
+  <h1 class="text-3xl font-bold text-gray-900 mb-8">모임 만들기</h1>
+
+  <%= form_with model: @meeting, url: meetings_path, class: "space-y-5" do |form| %>
+    <% if @meeting.errors.any? %>
+      <div class="text-red-600 text-sm">
+        <ul class="list-disc list-inside">
+          <% @meeting.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :title, "제목", class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.text_field :title, class: "w-full border border-gray-300 rounded-lg px-3 py-2" %>
+    </div>
+
+    <div>
+      <%= form.label :description, "설명", class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.text_area :description, rows: 4, class: "w-full border border-gray-300 rounded-lg px-3 py-2" %>
+    </div>
+
+    <div>
+      <%= form.label :held_on, "날짜", class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.date_field :held_on, class: "w-full border border-gray-300 rounded-lg px-3 py-2" %>
+    </div>
+
+    <div>
+      <%= form.label :location, "장소", class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.text_field :location, class: "w-full border border-gray-300 rounded-lg px-3 py-2" %>
+    </div>
+
+    <div>
+      <%= form.label :capacity, "최대 인원수", class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.number_field :capacity, min: 1, class: "w-full border border-gray-300 rounded-lg px-3 py-2" %>
+    </div>
+
+    <div class="flex gap-3 pt-2">
+      <%= form.submit "만들기", class: "px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 cursor-pointer" %>
+      <%= link_to "취소", meetings_path, class: "px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50" %>
+    </div>
+  <% end %>
+</div>

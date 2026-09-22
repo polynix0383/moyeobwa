@@ -1,0 +1,25 @@
+<% content_for :title, "모임 둘러보기 - 모여봐" %>
+
+<div class="w-full max-w-2xl mx-auto py-16">
+  <div class="flex items-center justify-between mb-8">
+    <h1 class="text-3xl font-bold text-gray-900">모임 둘러보기</h1>
+    <%= link_to "모임 만들기", new_meeting_path, class: "px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700" %>
+  </div>
+
+  <% if @meetings.empty? %>
+    <p class="text-gray-500 text-center py-12">아직 등록된 모임이 없습니다.</p>
+  <% else %>
+    <div class="space-y-4">
+      <% @meetings.each do |meeting| %>
+        <%= link_to meeting_path(meeting[:id]), class: "block border border-gray-200 rounded-xl p-5 shadow-sm hover:border-indigo-400 transition" do %>
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-lg font-semibold text-gray-900"><%= meeting[:title] %></h2>
+            <span class="text-sm text-gray-500"><%= meeting[:held_on] %></span>
+          </div>
+          <p class="text-gray-600 text-sm mb-3"><%= meeting[:description] %></p>
+          <p class="text-sm text-gray-500">📍 <%= meeting[:location] %></p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
