@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1.3", ">= 8.1.3.1"
+gem "rails", "~> 8.1.4"
 # Pin json: 3.0.x has a regression where JSON.parse(str, options_hash) raises
 # ArgumentError, which breaks ActiveSupport::JSON.decode (used by cookie session loading).
 gem "json", "~> 2.9"
