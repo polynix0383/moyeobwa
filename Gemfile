@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.1.3", ">= 8.1.3.1"
 # Pin json: 3.0.x has a regression where JSON.parse(str, options_hash) raises
 # ArgumentError, which breaks ActiveSupport::JSON.decode (used by cookie session loading).
-gem "json", "~> 2.9"
+gem "json", "~> 3.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
